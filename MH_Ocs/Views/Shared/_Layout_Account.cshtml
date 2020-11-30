@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Онлайн курс | Marine Health</title>
+
+    <link rel="stylesheet" type="text/css" href="~/Content/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/libs/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/compiled/theme_styles.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/private/Account.css" />
+
+
+    <link rel="apple-touch-icon" sizes="76x76" href="~/Content/img/favicon.png">
+    <link rel="icon" type="image/png" href="~/Content/img/favicon.png">
+
+
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,600,700,300 | Titillium+Web:200,300,400' rel='stylesheet' type='text/css'>
+
+
+</head>
+<body class="body">
+    <div id="theme-wrapper">
+        <header class="navbar" id="header-navbar">
+            <div class="container navcontainerr">
+                <a href="@Url.Action("Login","Account")" id="logo" class="navbar-brand">
+                    <img src="~/Content/img/logo.png" />
+                </a>
+
+            </div>
+        </header>
+        @RenderBody()
+
+    </div>
+
+
+
+
+
+
+
+    <script src="~/Content/js/jquery.js"></script>
+    <script src="~/Content/js/bootstrap.js"></script>
+    <script src="~/Content/portal/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+
+
+   
+
+
+
+    <script>
+
+        $("select").change(function () {
+
+            var lang = $("#Language").val();
+
+
+
+            $("#password").attr("placeholder", arrLang[lang]['password']);
+
+            $("#email").attr("placeholder", arrLang[lang]['email']);
+
+            $("#login-forget-link").text(arrLang[lang]['forgotpassword']);
+
+            $("#btnsuc").text(arrLang[lang]['sign']);
+
+
+        });
+
+    </script>
+
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(55936414, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/55936414" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+
+</body>
+</html>

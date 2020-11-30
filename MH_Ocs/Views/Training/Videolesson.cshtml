@@ -1,0 +1,197 @@
+﻿@model MH_Ocs.Models.Training_VideoL
+@using MH_Ocs.Models
+
+@{
+    Layout = "~/Views/Shared/_LayoutLearn.cshtml";
+    
+    var setLang = GetUser.VideoLesson(ViewBag.language);
+
+}
+
+<style>
+    #player {
+        --plyr-color-main: #1ac266;
+    }
+</style>
+
+
+<link href="~/Content/js/plyr/plyr.css" rel="stylesheet" />
+
+
+
+<header class="main-box-header clearfix header-title-l">
+    <h2 style="font-weight:900 !important">@Model.Name</h2>
+</header>
+
+
+
+
+
+
+<div class="main-box-body clearfix">
+    <!-- 4:3 aspect ratio --  videoh-->
+
+
+
+
+    <div class="container">
+        <div id="player" data-plyr-provider="youtube" style="width:100%" data-plyr-embed-id="@Model.Link"></div>
+    </div>
+
+
+
+    <br /><br />
+
+    <div class="col-xs-12" style="color:#808080; border-bottom:2px solid grey">
+
+
+  
+        <div style="float:right;padding:6px">
+            <i class="fa  fa-eye "> @Model.Training_VideoXL.Training_VideoLEM.FirstOrDefault().Eye</i>
+        </div>
+
+
+        <div style="float:right;padding:6px">
+
+            <i class="fa  fa-thumbs-up " style="cursor:pointer" onclick="like(@Model.Id)">
+
+                @{ int? lk = 0;}
+                @if (ViewBag.lkv == 1)
+                {
+                    lk = Model.Training_VideoXL.Training_VideoLEM.FirstOrDefault().Likes - 1;
+                    <span id="like0" style="color:#03a9f4;font-weight:bold">@Model.Training_VideoXL.Training_VideoLEM.FirstOrDefault().Likes</span>
+                    <span id="like1" class="hidden">@lk</span>
+                }
+                else
+                {
+                    lk = Model.Training_VideoXL.Training_VideoLEM.FirstOrDefault().Likes + 1;
+                    <span id="like1">@Model.Training_VideoXL.Training_VideoLEM.FirstOrDefault().Likes</span>
+                    <span id="like0" class="hidden" style="color:#03a9f4;font-weight:bold">@lk</span>
+                }
+
+                <input type="hidden" class="like01" value="@ViewBag.lkv" id="lkbd" />
+
+            </i>
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+
+<div class="col-xs-12" style="margin-bottom:20px">
+
+    <div id="buttonpoz">
+
+
+
+        <div class="col-xs-12">
+
+
+            @if (ViewBag.LastVId != null)
+            {
+                <div class="previous" style="float:left"><a href="@Url.Action("Videolesson", "Training", new { Id = ViewBag.LastVId, language = ViewBag.language })">← @setLang.Previous</a></div>
+            }
+            else
+            {
+
+                <div class="previous" style="float:left"><a href="@Url.Action("Modules", "Training", new {language = ViewBag.language })">← @setLang.toMain</a></div>
+                
+            }
+
+
+            @if (ViewBag.NextVId != null)
+            {
+
+                <div class="next" id="nextpl" style="float:right"><a href="@Url.Action("Videolesson", "Training", new { Id = ViewBag.NextVId, language = ViewBag.language })">@setLang.Next  →</a></div>
+            }
+            else
+            {
+                <div class="next" id="nextpl" style="float:right"><a href="@Url.Action("Modules", "Training", new {language = ViewBag.language })">@setLang.toMain  →</a></div>
+
+            }
+
+
+
+
+
+
+        </div>
+
+       
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+
+    function like(id) {
+
+        var ltf = $(".like01").val();
+        var tf = 0;
+
+        if (ltf == 1) {
+            $("#like1").removeClass("hidden");
+            $("#like0").addClass("hidden");
+            $("#lkbd").val(0);
+        }
+        else {
+            $("#like0").removeClass("hidden");
+            $("#like1").addClass("hidden");
+            $("#lkbd").val(1);
+            tf = 1;
+        }
+        var url = '@Url.Action("like", "Training")';
+        $.getJSON(url, { id: id, tf: tf }, function () {
+        });
+
+
+
+    }
+ 
+</script>
+
+
+
+
+
+
+
+
+
+@section PlyrJs{
+
+    <script src="~/Content/js/plyr/plyr.min.js"></script>
+
+
+    <script>
+
+        const player = new Plyr('#player', {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen','captions'],
+            youtube: { noCookie: false, rel: 0, showinfo: 0, iv_load_policy: 0, modestbranding: 1, сс_load_policy: 1},
+            keyboard:{ focused: false, global: false }
+
+        });
+
+
+        player.on('ready', event => {
+
+            var url = '@Url.Action("Addeye", "Training")';
+            var a = @Model.Id;
+            $.getJSON(url, { id: a }, function () {
+            });
+        });
+    </script>
+} 

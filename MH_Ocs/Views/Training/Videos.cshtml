@@ -1,0 +1,63 @@
+﻿
+@using MH_Ocs.Models
+@model  IEnumerable<MH_Ocs.Models.Training_VideoL>
+
+@{
+    Layout = "~/Views/Shared/_LayoutLearn.cshtml";
+}
+
+
+
+<header class="main-box-header clearfix header-title-l">
+    <h2 style="font-weight:900 !important"> @ViewBag.ModulName </h2>
+</header>
+
+
+
+
+
+<div class="container modul" id="Videos">
+
+
+@if (Model.Count() > 0)
+{
+
+    foreach (var item in Model)
+    {
+
+            <a href="@Url.Action("Videolesson", "Training", new { Id = item.Id, language = ViewBag.language })">
+                <div class="col-xs-12 videotable">
+
+                    <div class="col-xs-8  videotleft">
+                        <div class="col-xs-12">
+                            <span class="minutet">@item.Training_VideoXL.Training_VideoLEM.First().minute  минут</span>
+                            <div class="title">  @item.Name </div>
+                        </div>
+                        <div class="col-xs-12  statvideo ">
+                            <i class="fa  fa-thumbs-up " style="height:14px">@item.Training_VideoXL.Training_VideoLEM.First().Likes</i>&nbsp;&nbsp;
+
+                            <i class="fa  fa-eye ">@item.Training_VideoXL.Training_VideoLEM.First().Eye</i>
+
+                        </div>
+                    </div>
+
+                    <img src="@Url.Content(item.Iconimg)" class="col-xs-4 videotright" />
+
+                </div>
+            </a>
+
+    }
+}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+

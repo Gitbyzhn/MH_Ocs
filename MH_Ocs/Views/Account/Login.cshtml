@@ -1,0 +1,187 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_Account.cshtml";
+
+    var language = "ru";
+    var password = "пароль";
+    var forgotpassword = "Забыли пароль?";
+    var sign = "Войти";
+
+
+    language = ViewBag.language;
+    switch (language)
+    {
+        case "kz":
+            password = "пароль";
+            forgotpassword = "Құпия сөзді ұмыттыңыз ба?";
+            sign = "Кіру";
+            break;
+        case "uz":
+            password = "пароль";
+            forgotpassword = "Parolni unutdingizmi?";
+            sign = "Kirish";
+            break;
+        case "kr":
+            password = "пароль";
+            forgotpassword = "Ачкыч сөздү унутуп калдынызбы?";
+            sign = "Кирүү";
+            break;
+        case "tr":
+            password = "şifre";
+            forgotpassword = "Parolanızı mı unuttunuz?";
+            sign = "Oturum aç";
+            break;
+        case "en":
+            password = "password";
+            forgotpassword = "Forgot password?";
+            sign = "Login";
+            break;
+
+    }
+}
+   
+
+<div class="container" id="login-full-wrapper">
+    <div class="row">
+        <div class="col-xs-12">
+            <div id="login-box">
+                <div id="login-box-holder">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <header id="login-header">
+                                <div id="login-logo">
+                                    <img src="~/Content/img/logo.png" alt="" />
+                                </div>
+                            </header>
+                            <div id="login-box-inner">
+
+
+                                @using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true)
+
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+
+                                        <input class="form-control" type="text" placeholder="Email" name="UserName" required>
+
+                                    </div>
+
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+
+                                        <input type="password" id="password" class="form-control" placeholder="@password" name="Password" required>
+
+                                        <span style="cursor:pointer" class="input-group-addon" onclick="showpassword()"><i class="fa fa-eye"></i></span>
+                                    </div>
+                                        <div id="remember-me-wrapper">
+                                            <div class="row">
+
+
+                          
+                                             
+                                              
+
+                                                <div class="col-xs-6">
+
+                                                    <select class="form-control" name="Language" id="Language">
+                                                        <option value="kz">Қазақ</option>
+                                                        <option value="ru" selected>Русский</option>
+                                                        <option value="uz">O'zbek</option>
+                                                        <option value="kr">Кыргыз</option>
+                                                        <option value="tr">Türk</option>
+                                                        <option value="en">English</option>
+                                                    </select>
+
+                                                </div>
+
+                                                <a href="https://my.marinehealth.asia/ForgotPassword" id="login-forget-link" class="col-xs-6" style="color: #03a9f4">
+                                                    @forgotpassword
+                                                </a>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <button id="btnsuc" type="submit" class="btn btn-success col-xs-12">@sign</button>
+                                            </div>
+                                        </div>
+
+
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    var arrLang = {
+
+
+        'kz': {
+            'password': 'пароль',
+            'forgotpassword': 'Құпия сөзді ұмыттыңыз ба?',
+            'sign': 'Кіру'
+
+        },
+
+        'ru': {
+            'password': 'пароль',
+            'forgotpassword': 'Забыли пароль?',
+            'sign': 'Войти'
+
+        },
+
+        'uz': {
+            'password': 'parol',
+            'forgotpassword': 'Parolni unutdingizmi?',
+            'sign': 'Kirish'
+
+        },
+
+        'kr': {
+            'password': 'пароль',
+            'forgotpassword': 'Ачкыч сөздү унутуп калдынызбы?',
+            'sign': 'Кирүү'
+
+        },
+
+        'en': {
+            'password': 'password',
+            'forgotpassword': 'Forgot password?',
+            'sign': 'Login'
+
+        },
+        'tr': {
+            'password': 'şifre',
+            'forgotpassword': 'Parolanızı mı unuttunuz?',
+            'sign': 'Oturum aç'
+
+        }
+
+    }
+
+
+    function showpassword() {
+        var x = document.getElementById("password");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+
+
+
+</script>

@@ -1,0 +1,42 @@
+﻿@model  IEnumerable<MH_Ocs.Models.Training_Property>
+@using MH_Ocs.Models
+@{
+    Layout = "~/Views/Shared/_LayoutLearn.cshtml";
+ 
+}
+
+
+<link href="~/Content/css/private/Learning.css" rel="stylesheet" />
+
+
+
+<div class="row">
+ 
+
+    @if (Model.Count() > 0)
+    {
+
+
+        foreach (var Training in Model)
+        {
+                <div class="col-md-12 modul">
+
+
+                    <div class="thumbnail thumbhover">
+                        <a href="@Url.Action("Videos","Training",new {id = Training.Training.Id, language = ViewBag.language })" class="moduls">
+                            <img src="@Url.Content(Training.Training.Image)" alt="Lights">
+                            <div class="caption">
+                                <p>@Training.Titile</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            
+        }
+
+
+    }
+
+</div>

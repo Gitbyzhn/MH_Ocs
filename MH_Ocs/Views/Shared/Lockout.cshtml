@@ -1,0 +1,38 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Заблокировано";
+}
+
+<hgroup>
+    <h1 class="text-danger">Заблокировано.</h1>
+    <h2 class="text-danger">Эта учетная запись заблокирована. Попробуйте еще раз позже.</h2>
+</hgroup>
+
+
+
+
+<script>
+
+    function sendCall($product){
+        if($product){
+            $product = "Заявка с сайта 'OTAN-NEW', модель '" + $product + "'";
+
+            $.ajax({
+                url: 'js/mail.php',
+                method: "POST",
+                data:$(this).serialize()
+            }).complete: function(){
+                $.magnificPopup.close();
+                $('.clear-input').val('');
+                setTimeout(function () {
+                    $('.thank-target').click();
+                }, 500);
+            };
+
+
+        }
+
+    }
+
+</script>

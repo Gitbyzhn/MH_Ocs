@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="02ca35decad749d89eb241f82e0c1178" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.AspNetRole" Width="1.5" PointX="13.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.AspNetUserClaim" Width="1.5" PointX="18.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.AspNetUserLogin" Width="1.5" PointX="18.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.AspNetUser" Width="1.5" PointX="16" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.ErrorLogOFF" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.EyeV" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Isbranni" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.JVLO" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.LessonVideoTime" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.LikeV" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Modul_userLevel" Width="1.5" PointX="11" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Modules_Property" Width="1.5" PointX="11" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Task_First" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Task" Width="1.5" PointX="3.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Test" Width="1.5" PointX="15.5" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.UserInfo" Width="1.5" PointX="0.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Users_Certificates" Width="1.5" PointX="3" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.UserTaskCheck" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.UT" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.ValitO" Width="1.5" PointX="3" PointY="24.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.VideoL" Width="1.5" PointX="13.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.VideoLEM" Width="1.5" PointX="13.25" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.VideoXL" Width="1.5" PointX="11" PointY="12.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_EyeV_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Isbranni_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_LessonVideoTime_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_LikeV_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Task_First_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_UserTaskCheck_Tasks" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Test_VideoL" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Users_Certificates_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_UserTaskCheck_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_ValitOS_UserInfo" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_VideoL_VideoXL" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_VideoLEM_VideoXL" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Modul" Width="1.5" PointX="8.75" PointY="7.875" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Modul_userLevel_Modul" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Modules_Property_Modul" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_VideoL_Modul" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_VideoXL_Modul" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training_LikeV" Width="1.5" PointX="3" PointY="32" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training_VideoLEM" Width="3" PointX="10.875" PointY="18.125" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training_VideoXL" Width="1.5" PointX="8.625" PointY="18.125" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_LikeV_UserInfo" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_VideoLEM_Training_VideoXL" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training" Width="1.5" PointX="6.375" PointY="20" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_VideoXL_Training" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training_Property" Width="1.5" PointX="8.625" PointY="21.25" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_Property_Training" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training_EyeV" Width="1.5" PointX="3" PointY="27.625" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_EyeV_UserInfo" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Webinar_EyeV" Width="1.5" PointX="17.625" PointY="23.125" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Webinar_LikeV" Width="1.5" PointX="17.625" PointY="20.625" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Webinar_VideoLEM" Width="1.5" PointX="17.625" PointY="14.375" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Webinar_VideoXL" Width="1.5" PointX="15.375" PointY="18.5" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Webinar_EyeV_Webinar_VideoXL" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Webinar_LikeV_Webinar_VideoXL" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Webinar_VideoLEM_Webinar_VideoXL" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Webinar_EyeV_UserInfo" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Webinar_LikeV_UserInfo" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.User_SendCompleteTraining" Width="1.5" PointX="5.375" PointY="6.75" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Training_VideoL" Width="1.5" PointX="10.875" PointY="21.625" />
+        <EntityTypeShape EntityType="DB_Mhealth_OCsModel.Webinar_VideoL" Width="1.5" PointX="17.625" PointY="26.25" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_VideoL_Training" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Training_VideoL_Training_VideoXL" />
+        <AssociationConnector Association="DB_Mhealth_OCsModel.FK_Webinar_VideoL_Webinar_VideoXL" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

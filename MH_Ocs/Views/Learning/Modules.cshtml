@@ -1,0 +1,261 @@
+﻿@model  IEnumerable<MH_Ocs.Models.Modules_Property_Enable>
+@using MH_Ocs.Models
+@{
+    Layout = "~/Views/Shared/_LayoutLearn.cshtml";
+    var setLang = GetUser.TextModulNotReach(ViewBag.language);
+
+
+}
+
+
+<link href="~/Content/css/private/Learning.css" rel="stylesheet" />
+
+
+
+<div class="md-modal md-effect-1 Module-notLevel" id="modal-2">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="alert alert-info">
+                    @setLang.TextManager
+                </div>
+
+                <div class="form-inline form-inline-box">
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="md-modal md-effect-1 Module-notLevel" id="modal-3">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="alert alert-info">
+                    @setLang.TextBronzemanager 
+                </div>
+
+                <div class="form-inline form-inline-box">
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="md-modal md-effect-1 Module-notLevel" id="modal-4">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="alert alert-info">
+                    @setLang.TextSilverManager 
+                </div>
+
+                <div class="form-inline form-inline-box">
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="md-modal md-effect-1 Module-notLevel" id="modal-5">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="alert alert-info">
+                
+                    @setLang.TextGoldmanager 
+                </div>
+
+                <div class="form-inline form-inline-box">
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+<div class="md-modal md-effect-1 Module-notLevel" id="modal-6">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="alert alert-info">
+                    @setLang.TextPlatinumManager 
+                </div>
+
+                <div class="form-inline form-inline-box">
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="md-modal md-effect-1 Module-notLevel" id="modal-7">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            <form role="form">
+                <div class="alert alert-info">
+                    @setLang.TextDerictor
+                </div>
+
+                <div class="form-inline form-inline-box">
+
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="md-modal md-effect-1" id="modal-certificate">
+    <div class="md-content">
+        <div class="modal-header">
+            <button class="md-close close">&times;</button>
+
+        </div>
+        <div class="modal-body">
+            @if (!string.IsNullOrEmpty(ViewBag.CertURL))
+            {
+                <img src="@Url.Content(ViewBag.CertURL)" class="img-thumbnail" />
+            }
+
+        </div>
+
+
+    </div>
+</div>
+<div class="md-overlay pyro">
+
+</div>
+
+<div class="row">
+ 
+
+
+    @if (!string.IsNullOrEmpty(ViewBag.CertURL))
+    {
+        <div class="col-md-12 modul certificate">
+
+
+            <div class="thumbnail thumbhover">
+                <div class="md-trigger" data-modal="modal-certificate">
+                    <img src="@Url.Content(ViewBag.CertURL)" alt="Lights" style="width: 93%;height: 225px;margin: 0 auto; display: table;">
+                    <div class="caption">
+
+                        <a href="@Url.Content(ViewBag.CertURL)" download="">
+                            Сертификат <span class="fa fa-download"></span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+    @if (Model.Count() > 0)
+    {
+
+
+        foreach (var Modul in Model)
+        {
+
+
+            if (Modul.Enable)
+            {
+                <div class="col-md-12 modul">
+
+
+                    <div class="thumbnail thumbhover">
+                        <a href="@Url.Action("Videos","Learning",new {id = Modul.Modul_Property_IN.Modul.Id, language = ViewBag.language })" class="moduls">
+                            <img src="@Url.Content(Modul.Modul_Property_IN.Modul.Image)" alt="Lights">
+                            <div class="caption">
+                                <p>@Modul.Modul_Property_IN.Titile</p>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            }
+            else
+            {
+                <div class="col-md-12 modul md-trigger" data-modal="modal-@Modul.Modul_Property_IN.Modul.Modul_userLevel.FirstOrDefault().LevelId">
+
+
+                    <div class="thumbnail thumbhover">
+                        <a href="#" class="moduls">
+                            <img src="@Url.Content(Modul.Modul_Property_IN.Modul.Image)" class="disabled-img" alt="Lights">
+
+                            <div class="caption" style="background-color:#ccc">
+                                <p>@Modul.Modul_Property_IN.Titile</p>
+
+                            </div>
+
+
+                        </a>
+                        <i class="fa fa-lock lock-modul"></i>
+
+                    </div>
+
+                </div>
+
+            }
+
+        }
+
+
+
+
+
+
+
+
+    }
+
+</div>

@@ -1,0 +1,30 @@
+﻿.btn_save_premium {
+    padding: 5px 8px;
+    border-radius: 3px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.checkPublish {
+    font-size: 18px;
+}
+
+    .checkPublish > input {
+        cursor: pointer;
+    }
+
+
+    .checkPublish > input {
+        margin-left: 0px !important;
+    }
+
+.disabled {
+    background-color: #eee;
+    opacity: 1;
+   pointer-events: none;
+}
+
+.select-menu-table {
+    float: right;
+    max-width: 300px;
+}

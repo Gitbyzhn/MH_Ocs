@@ -1,0 +1,67 @@
+﻿
+@using MH_Ocs.Models
+@{
+    Layout = "~/Views/Shared/_LayoutLearn.cshtml";
+
+    var setLang = GetUser.language(ViewBag.language);
+}
+
+
+<header class="main-box-header clearfix header-title-l">
+    <h2 style="font-weight:900 !important">@setLang.UsefulServices</h2>
+</header>
+
+
+<div class="container modul">
+
+    <div class="main-box" >
+
+  
+     
+            <div class="list-group" style="width:100%">
+              
+                <a href="http://shop.marinehealth.asia" class="list-group-item" target="_blank">
+                    <h4 class="list-group-item-heading ">
+                        <span class="label label-primary"> <i class="fa fa-share-square-o"></i>Интернет магазин</span>
+                        </h4>
+                    
+                        <p class="list-group-item-text" style="margin-top:10px"></p>
+                 </a>
+                
+                <a href="https://my.marinehealth.asia" class="list-group-item" target="_blank">
+                    <h4 class="list-group-item-heading ">
+                        <span class="label label-primary"> <i class="fa fa-share-square-o"></i>Кабинет партнеров</span>
+                    </h4>
+
+                    <p class="list-group-item-text" style="margin-top:10px"></p>
+                </a>
+
+                <a href="http://marinehealth.asia" class="list-group-item" target="_blank">
+                    <h4 class="list-group-item-heading ">
+                        <span class="label label-primary"> <i class="fa fa-share-square-o"></i>Официальный сайт компании</span>
+                    </h4>
+
+                    <p class="list-group-item-text" style="margin-top:10px"></p>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UColOjoudFoG7gxZgzzFXtcw" class="list-group-item" target="_blank">
+                    <h4 class="list-group-item-heading ">
+                        <span class="label label-primary"> <i class="fa fa-share-square-o"></i>YouTube канал</span>
+                    </h4>
+
+                    <p class="list-group-item-text" style="margin-top:10px"></p>
+                </a>
+
+                <a href="https://t.me/marinehealthgroup" class="list-group-item" target="_blank">
+                    <h4 class="list-group-item-heading ">
+                        <span class="label label-primary"> <i class="fa fa-share-square-o"></i>Телеграм канал</span>
+                    </h4>
+
+                    <p class="list-group-item-text" style="margin-top:10px"></p>
+                </a>
+               
+            </div>
+ 
+
+    </div>
+</div>

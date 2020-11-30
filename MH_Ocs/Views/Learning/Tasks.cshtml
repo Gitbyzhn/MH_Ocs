@@ -1,0 +1,61 @@
+﻿@using MH_Ocs.Models
+@{
+    Layout = "~/Views/Shared/_LayoutLearn.cshtml";
+
+    var setLang = GetUser.TextTasktendreams(ViewBag.language);
+}
+
+
+<link rel="stylesheet" type="text/css" href="~/Content/css/libs/ns-default.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/libs/ns-style-growl.css" />
+<link rel="stylesheet" type="text/css" href="~/Content/css/libs/ns-style-theme.css" />
+
+
+<script src="~/Scripts/jquery.js"></script>
+
+
+
+
+<header class="main-box-header clearfix header-title-l">
+    <h2 style="font-weight:900 !important">@setLang.Title</h2>
+</header>
+
+
+<div class="container">
+  
+
+    @if (ViewBag.Task_First == true)
+    {
+        
+        <a href="@Url.Action("Task_ten_dreams", "Learning",new { language = ViewBag.language})" style="cursor:pointer">
+            <div class="listltsk col-xs-12">
+
+                <i class="fa fa-tasks  texttask"> @setLang.Task_First_Title</i>
+            </div>
+        </a>
+
+    }
+
+    
+ 
+
+</div>
+
+
+
+
+<script src="~/Content/js/modernizr.custom.js"></script>
+<script src="~/Content/js/snap.svg-min.js"></script> <!-- For Corner Expand and Loading circle effect only -->
+<script src="~/Content/js/classie.js"></script>
+<script src="~/Content/js/notificationFx.js"></script>
+
+
+
+
+
+
+
+
+
+
+    

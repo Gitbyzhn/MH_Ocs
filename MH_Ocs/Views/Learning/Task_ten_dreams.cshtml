@@ -1,0 +1,113 @@
+﻿
+@using MH_Ocs.Models
+@model MH_Ocs.Models.Task_First
+
+@{
+    Layout = "~/Views/Shared/_LayoutTestandTask.cshtml";
+    if (Model != null)
+    {
+
+        ViewBag.First = Model.First;
+        ViewBag.Second = Model.Second;
+        ViewBag.Third = Model.Third;
+        ViewBag.Four = Model.Four;
+        ViewBag.Five = Model.Five;
+
+        ViewBag.Six = Model.Six;
+        ViewBag.Seven = Model.Seven;
+        ViewBag.Eight = Model.Eight;
+        ViewBag.Nine = Model.Nine;
+        ViewBag.Ten = Model.Ten;
+
+
+    }
+
+    var setLang = GetUser.TextTasktendreams(ViewBag.language);
+}
+
+
+
+
+
+<div class="col-sm-8 col-md-9">
+
+    <div class="main-box clearfix " style="padding:20px">
+
+
+
+
+        <header class="main-box-header clearfix" style="background-color:#f4f1e8;color:#03a9f4;margin-bottom:20px;margin-top:10px">
+            <h2 style="font-weight:900 !important">@setLang.Title</h2>
+        </header>
+        <div class="container modul">
+
+            <div class="main-box">
+
+                <h3><span>@setLang.Task_First_Title</span></h3>
+
+
+            </div>
+
+            <form method="post" action="@Url.Action("Task_ten_dreams","Learning")">
+
+
+
+                <div class="form-group">
+                    <label> <span class="badgenew">1</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="First" required=""> @ViewBag.First</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">2</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Second" required="">@ViewBag.Second</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">3</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Third" required=""> @ViewBag.Third</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">4</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Four"> @ViewBag.Four</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">5</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Five"> @ViewBag.Five</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">6</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Six">@ViewBag.Six</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">7</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Seven">@ViewBag.Seven</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">8</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Eight">@ViewBag.Eight</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">9</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Nine">@ViewBag.Nine</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label> <span class="badgenew">10</span></label>
+                    <textarea maxlength="180" class="form-control" rows="3" name="Ten">@ViewBag.Ten</textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-info col-xs-12" style="margin-bottom:20px">@setLang.SaveBtn</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    </div>

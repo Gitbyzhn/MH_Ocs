@@ -1,0 +1,93 @@
+﻿
+@using MH_Ocs.Models
+@model   IEnumerable <MH_Ocs.Models.UserInfo>
+
+
+@{
+    Layout = null;
+    int Id = 0;
+}
+
+
+
+<table>
+
+    <tr>
+        <td>Id</td>
+        <td>UserId</td>
+        <td>Ф.И.</td>
+        <td>Email</td>
+    </tr>
+
+
+
+    @foreach (var item in Model)
+    {
+
+        Id++;
+        <tr>
+
+        <td>@Id</td>
+        <td>@item.Id</td>
+        <td>@item.Lname @item.Fname</td>
+        <td>@item.UserName</td>
+        <td>
+            
+            @if (item.LevelId == 1)
+            {
+              <span>Стажёр</span>
+            }
+            else if (item.LevelId == 2)
+            {
+                <span>Менеджер</span>
+            }
+            else if (item.LevelId == 3)
+            {
+                <span>Бронзовый менеджер</span>
+            }
+            else if (item.LevelId == 4)
+            {
+                <span>Серебряный менеджер</span>
+            }
+            else if (item.LevelId == 5)
+            {
+               <span>Золотой менеджер</span>
+
+            }
+            else if (item.LevelId == 6)
+            {
+                <span>Платиновый менеджер</span>
+            }
+
+            else if (item.LevelId == 7)
+            {
+                <span>Директор</span>
+            }
+            else if (item.LevelId == 8)
+            {
+                <span>Золотой директор</span>
+            }
+            else if (item.LevelId == 9)
+            {
+                <span>Сапфировый директор</span>
+            }
+
+            else if (item.LevelId == 10)
+            {
+                <span>Бриллиантовый директор</span>
+            }
+
+            else if (item.LevelId == 11)
+            {
+                <span>Вице-президент</span>
+            }
+       </td>
+
+        </tr>
+    }
+ 
+
+   
+
+
+</table>
